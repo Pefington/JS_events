@@ -52,7 +52,6 @@ const secondCardEditButton = document.getElementsByClassName(
 )[1];
 const secondCard = document.getElementsByClassName("card")[1].parentElement;
 function turnTextGreen() {
-  console.log("test");
   if (secondCard.style.color === "green") {
     secondCard.style.color = "";
   } else {
@@ -110,7 +109,6 @@ function deRotateCards(event) {
   event.preventDefault();
   const cards = document.querySelectorAll(".card");
   const newFirstCard = cards[0].parentNode;
-  console.log(newFirstCard);
   newFirstCard.parentNode.append(newFirstCard);
 }
 deRotateButton.addEventListener("click", deRotateCards);
@@ -121,11 +119,9 @@ deRotateButton.addEventListener("click", deRotateCards);
 // Si l'utilisateur presse la touche "p", l'ensemble de la page va être condensé sur 4 colonnes Bootstrap à droite de l'écran.
 // Si l'utilisateur presse la touche "b", tout redevient normal.
 const logo = document.querySelector(".navbar-brand");
-console.log(logo);
-
-// const body = document.body;
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 const { body } = document;
+// equivaut à const body = document.body; (Object Destructuring)
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 
 function setLayout(bsClass) {
   body.setAttribute("class", bsClass);
@@ -154,5 +150,4 @@ logo.addEventListener("keyup", (event) => {
     default:
       break;
   }
-  console.dir(body.classList);
 });
