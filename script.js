@@ -80,10 +80,13 @@ const viewButtons = document.querySelectorAll(".btn-group > .btn-success");
 viewButtons.forEach((button) => {
   button.addEventListener("mouseover", () => {
     const image = button.closest("div.card").querySelector("img");
+    const text = button.closest(".card-body").querySelector("p");
     if (image.attributes.style) {
       image.removeAttribute("style");
+      text.toggleAttribute("hidden");
     } else {
       image.setAttribute("style", "width: 20%");
+      text.toggleAttribute("hidden");
     }
   });
 });
